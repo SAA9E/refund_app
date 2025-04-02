@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import locale
+# import locale streamlit에서는 ko_KR.UTF-8이 기본설치가 되어있지지 않음.
 from datetime import datetime, timedelta
 
 import calendar
@@ -8,7 +8,19 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 
 # 로케일 설정 (한글 월/요일 표시)
-locale.setlocale(locale.LC_TIME, "ko_KR.UTF-8")
+#locale.setlocale(locale.LC_TIME, "ko_KR.UTF-8")
+
+# 영어 요일을 한글로 변환하는 딕셔너리
+days_map = {
+    "Monday": "월",
+    "Tuesday": "화",
+    "Wednesday": "수",
+    "Thursday": "목",
+    "Friday": "금",
+    "Saturday": "토",
+    "Sunday": "일"
+}
+
 
 # 데이터 로드 함수
 def load_data():
