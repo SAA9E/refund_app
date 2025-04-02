@@ -24,7 +24,7 @@ days_map = {
 
 # 데이터 로드 함수
 def load_data():
-    file_path = "C:/Users/hyunji/Documents/playground/refund_app/data2.xlsx"
+    file_path = "./data2.xlsx"
     df = pd.read_excel(file_path)
     df.columns = df.iloc[0]  # 첫 번째 행을 컬럼으로 설정
     df = df[1:].reset_index(drop=True)  # 첫 번째 행 제거
