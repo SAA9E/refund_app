@@ -159,11 +159,11 @@ st.title("💰 프로그램 환불 계산기")
 
 # 강좌 선택
 courses = df.index.unique()
-selected_course = st.selectbox("강좌명을 선택하세요:", courses)
+selected_course = st.selectbox("강좌명을 선택하세요", courses)
 class_days = df.loc[selected_course, "요일"] if selected_course in df.index else "정보 없음" #캘린더를 위해해
 
 # 환불 날짜 선택
-refund_date = st.date_input("환불 요청 날짜를 선택하세요:", datetime.today())
+refund_date = st.date_input("환불 요청 날짜를 선택하세요", datetime.today())
 year, month = refund_date.year, refund_date.month #캘린더를 위해
 
 
